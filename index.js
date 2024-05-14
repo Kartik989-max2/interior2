@@ -26,10 +26,6 @@ const connectDB = async()=>{
 let app = express()
 
 
-app.use(cors({
-origin:["https://interior2-iota.vercel.app/"],
-    methods:["POST","GET"],
-}));
 
 
 let pageModel = require('./model/pageModel')
