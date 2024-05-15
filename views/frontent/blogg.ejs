@@ -5,25 +5,28 @@
         <%-include('common/head.ejs')-%>
         <title>Blog</title>
     
-<body>
+<body style="overflow-x: hidden;">
     <%-include('common/header.ejs')-%>
    <div class=" m-5 d-flex justify-content-center" style="padding-top: 4rem;">
 
      <%naavdata.forEach((y,index)=>{%>
       <div class="col-sm-4 m-2 d-flex">
-        <div class="card m-3 p-2 ">
-          <div class="card-body m-2 ">
+        <div class="card2 m-3 p-2 ">
+          <div style="position: relative;" class="card-body2 m-2 ">
             <img src="/backend/images/<%=y?y.pagePhoto:''%>" alt="" class="card-img-top">
-            <h5 class="card-title"><%=y?y.pageHeading:''%></h5>
+            <h5 style="font-size: 2rem;
+            margin-top: 12px;
+            color: white !important;" class="card-title"><%=y?y.pageHeading:''%></h5>
             <p class="card-text"><%-y?y.pageDetails.slice(0,150):''%></p>
             <a class="btn btn-primary " href="<%=y?y.pageUrl:''%>">View</a>
             
           </div>
         </div>
       </div>
+
      <% if ((index + 1) % 2 === 0) { %>
       </div>
-      <div class="row">
+      <div class="row col-sm-4">
   <% } %>
       <%})%>
     </div>
